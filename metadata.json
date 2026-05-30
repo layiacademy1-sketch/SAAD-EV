@@ -1,0 +1,6 @@
+{
+  "name": "Sâad'ev Convergence",
+  "description": "La Maison du Savoir Vivant — Une plateforme globale de connaissance intégrative reliant spiritualité, neurosciences, psychologie, philosophie et sagesse prophétique.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
