@@ -4,7 +4,7 @@ import { MISSION_ITEMS } from '../data';
 
 export default function NotreMission() {
   return (
-    <section id="mission" className="py-24 sm:py-32 bg-[#020204] relative overflow-hidden">
+    <section id="mission" className="pt-12 pb-24 sm:pt-16 sm:pb-32 bg-[#020204] relative overflow-hidden">
       
       {/* Background Decorative Mesh Lines */}
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-[#d4af37]/20 to-transparent" />
@@ -25,12 +25,17 @@ export default function NotreMission() {
             Notre <span className="text-[#d4af37] not-italic font-bold">mission</span>
           </h2>
           
-          <p className="mt-6 text-base sm:text-lg text-zinc-300 font-light leading-relaxed">
-            Pour éclairer l’être humain dans sa quête de sens et de vérité, nous formulons le projet ambitieux de{' '}
-            <span className="text-[#d4af37] font-normal">
-              créer des ponts précieux et impérissables entre les disciplines, les cultures et les époques.
-            </span>
-          </p>
+          <div className="mt-6 space-y-4 text-base sm:text-lg text-zinc-300 font-light leading-relaxed">
+            <p className="font-serif italic text-xl sm:text-2xl text-white">
+              Est de relier les savoirs. Comprendre l'humain. Transformer les vies.
+            </p>
+            <p className="font-medium text-zinc-200">
+              Convergence est une plateforme globale dédiée à la connaissance intégrative.
+            </p>
+            <p className="text-sm sm:text-base text-zinc-400">
+              Nous construisons des ponts entre spiritualité, sciences humaines, neurosciences, développement personnel et sagesse universelle pour offrir une compréhension profonde, pratique et accessible à tous.
+            </p>
+          </div>
         </div>
 
         {/* Bullet Points / Columns */}

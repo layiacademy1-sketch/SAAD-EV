@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
-import NotreMission from './components/NotreMission';
 import NosSources from './components/NosSources';
 import UniversContenus from './components/UniversContenus';
 import ApplicationMobile from './components/ApplicationMobile';
@@ -46,7 +45,16 @@ export default function App() {
     const observerCallback = (entries: IntersectionObserverEntry[]) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          setActiveSection(entry.target.id);
+          const id = entry.target.id;
+          if (id === 'accueil') {
+            setActiveSection('accueil');
+          } else if (id === 'contenus' || id === 'formations') {
+            setActiveSection('contenus');
+          } else if (id === 'mobile') {
+            setActiveSection('mobile');
+          } else if (id === 'mission' || id === 'sources' || id === 'vision') {
+            setActiveSection('mission');
+          }
         }
       });
     };
@@ -107,10 +115,7 @@ export default function App() {
         onJoin={() => handleNavigation('communaute')}
       />
 
-      {/* 3. Notre Mission Column block */}
-      <NotreMission />
-
-      {/* 4. Nos Sources grid dashboards */}
+      {/* 3. Nos Sources grid dashboards */}
       <NosSources />
 
       {/* 5. Univers De Contenus Interactive Mockups */}

@@ -25,13 +25,34 @@ export default function Footer({ onNavigate }: FooterProps) {
           
           {/* Brand Col */}
           <div className="md:col-span-2 flex flex-col justify-start">
-            <span className="font-serif text-lg sm:text-xl tracking-[0.25em] text-white flex items-center gap-1.5 font-semibold">
-              SÂAD’EV CONVERGENCE
-              <Sparkles className="w-4 h-4 text-[#d4af37] animate-pulse" />
-            </span>
-            <span className="text-[9px] uppercase font-mono tracking-[0.38em] text-[#d4af37] mt-1 hover:text-amber-300 transition-colors">
-              LA MAISON DU SAVOIR VIVANT
-            </span>
+            {/* Absolute hidden SVG filter to strip out the black background and make it a clean transparent PNG rendering */}
+            <svg width="0" height="0" className="absolute pointer-events-none" style={{ position: 'absolute', width: 0, height: 0 }}>
+              <defs>
+                <filter id="remove-black-bg-footer" colorInterpolationFilters="sRGB">
+                  <feColorMatrix
+                    type="matrix"
+                    values="
+                      1   0   0   0   0
+                      0   1   0   0   0
+                      0   0   1   0   0
+                      3   3   3   0  -0.12
+                    "
+                  />
+                </filter>
+              </defs>
+            </svg>
+
+            <div className="flex items-center mb-4">
+              <div className="relative w-44 h-14 sm:w-64 sm:h-20 bg-transparent flex items-center justify-start overflow-hidden">
+                <img
+                  src="https://image.noelshack.com/fichiers/2026/22/7/1780178760-chatgpt-image-31-mai-2026-00-00-01.jpg"
+                  alt="Sâad'ev Convergence Logo"
+                  referrerPolicy="no-referrer"
+                  style={{ filter: 'url(#remove-black-bg-footer)' }}
+                  className="w-full h-full object-contain mix-blend-screen"
+                />
+              </div>
+            </div>
             <p className="mt-5 text-xs text-zinc-400 font-light leading-relaxed max-w-sm">
               Une plateforme globale de connaissance intégrative qui réunit spiritualité, neurosciences cognitives, stoïcisme et psychologie moderne d'élite pour éclairer l'être humain.
             </p>

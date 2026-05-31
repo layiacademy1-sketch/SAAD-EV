@@ -26,13 +26,9 @@ export default function Header({ onNavigate, onOpenDiscover, activeSection }: He
 
   const navItems = [
     { id: 'accueil', label: 'Accueil' },
-    { id: 'mission', label: 'Mission' },
-    { id: 'sources', label: 'Nos Sources' },
     { id: 'contenus', label: 'Bibliothèque' },
-    { id: 'mobile', label: 'Application' },
-    { id: 'formations', label: 'Formations' },
-    { id: 'vision', label: 'Notre Vision' },
-    { id: 'communaute', label: 'Communauté' }
+    { id: 'mobile', label: 'Podcasts' },
+    { id: 'mission', label: 'À propos' }
   ];
 
   const handleItemClick = (id: string) => {
@@ -42,6 +38,23 @@ export default function Header({ onNavigate, onOpenDiscover, activeSection }: He
 
   return (
     <>
+      {/* Absolute hidden SVG filter to strip out the black background and make it a clean transparent PNG rendering */}
+      <svg width="0" height="0" className="absolute pointer-events-none" style={{ position: 'absolute', width: 0, height: 0 }}>
+        <defs>
+          <filter id="remove-black-bg" colorInterpolationFilters="sRGB">
+            <feColorMatrix
+              type="matrix"
+              values="
+                1   0   0   0   0
+                0   1   0   0   0
+                0   0   1   0   0
+                3   3   3   0  -0.12
+              "
+            />
+          </filter>
+        </defs>
+      </svg>
+
       <header
         id="premium-header"
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b ${
@@ -52,15 +65,17 @@ export default function Header({ onNavigate, onOpenDiscover, activeSection }: He
       >
         <div className="max-w-7xl mx-auto px-6 sm:px-8 flex items-center justify-between">
           
-          {/* Brand - Left-aligned / Grid-oriented depending on width */}
-          <div className="flex flex-col cursor-pointer group" onClick={() => handleItemClick('accueil')}>
-            <span className="font-serif text-lg sm:text-xl tracking-[0.3em] sm:tracking-[0.4em] text-[#d4af37] flex items-center gap-2 font-bold uppercase transition-all duration-300 group-hover:text-amber-300">
-              SÂAD’EV CONVERGENCE
-              <Sparkles className="w-4 h-4 text-[#d4af37] animate-pulse" />
-            </span>
-            <span className="text-[8px] sm:text-[9px] uppercase font-mono tracking-[0.4em] text-zinc-400 mt-1 font-semibold transition-colors group-hover:text-zinc-200">
-              LA MAISON DU SAVOIR VIVANT
-            </span>
+          {/* Brand - Left-aligned / Grid-oriented depending on width with the requested logo */}
+          <div className="flex items-center cursor-pointer group" onClick={() => handleItemClick('accueil')}>
+            <div className="relative w-44 h-14 sm:w-64 sm:h-20 bg-transparent flex items-center justify-center overflow-hidden">
+              <img
+                src="https://image.noelshack.com/fichiers/2026/22/7/1780178760-chatgpt-image-31-mai-2026-00-00-01.jpg"
+                alt="Sâad'ev Convergence Logo"
+                referrerPolicy="no-referrer"
+                style={{ filter: 'url(#remove-black-bg)' }}
+                className="w-full h-full object-contain mix-blend-screen group-hover:scale-102 transition-transform duration-500 scale-100"
+              />
+            </div>
           </div>
 
           {/* Desktop Navigation */}
@@ -87,28 +102,8 @@ export default function Header({ onNavigate, onOpenDiscover, activeSection }: He
             })}
           </nav>
 
-          {/* Discover Button (CTA) */}
-          <div className="hidden lg:block">
-            <button
-              onClick={onOpenDiscover}
-              className="relative group overflow-hidden px-5 py-2.5 rounded-full border border-[#d4af37]/50 bg-[#d4af37]/5 text-white font-mono text-[11px] tracking-widest uppercase transition-all duration-500 hover:border-[#d4af37] hover:shadow-[0_0_15px_rgba(212,175,55,0.3)] hover:-translate-y-0.5"
-            >
-              <span className="relative z-10 flex items-center gap-1.5">
-                Découvrir
-                <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-              </span>
-              <div className="absolute inset-x-0 bottom-0 top-full bg-gradient-to-t from-[#d4af37]/20 to-transparent transition-all group-hover:top-0 duration-500" />
-            </button>
-          </div>
-
           {/* Mobile hamburger toggle */}
           <div className="lg:hidden flex items-center gap-3">
-            <button
-              onClick={onOpenDiscover}
-              className="px-3.5 py-1.5 rounded-full border border-[#d4af37]/40 bg-[#d4af37]/5 text-white font-mono text-[10px] tracking-wider uppercase"
-            >
-              Découvrir
-            </button>
             <button
               id="mobile-nav-toggle"
               onClick={() => setIsOpen(!isOpen)}

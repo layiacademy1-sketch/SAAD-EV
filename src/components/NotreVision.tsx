@@ -101,17 +101,29 @@ export default function NotreVision() {
                 })}
               </svg>
 
-              {/* 1. CENTER EPICENTRE NODE */}
-              <div className="z-10 bg-black border-2 border-[#d4af37] w-24 h-24 sm:w-28 sm:h-28 rounded-full flex flex-col items-center justify-center text-center p-3 shadow-[0_0_35px_rgba(212,175,55,0.25)] relative">
-                {/* Micro-sparkle decoration */}
-                <div className="absolute inset-0.5 rounded-full border border-[#d4af37]/20 animate-pulse" />
-                <LucideIcons.Sparkles className="w-5 h-5 text-[#d4af37] mb-1 animate-pulse" />
-                <span className="text-[9px] sm:text-[10px] font-sans font-semibold tracking-wider text-white leading-tight">
-                  RELIER
-                </span>
-                <span className="text-[7px] sm:text-[8.5px] font-mono tracking-widest text-[#d4af37] uppercase mt-0.5">
-                  LES SAVOIRS
-                </span>
+              {/* 1. CENTER EPICENTRE NODE (INTEGRATED WITH BRAND LOGO IMAGE) */}
+              <div className="z-10 bg-transparent border-2 border-[#d4af37] w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden flex items-center justify-center shadow-[0_0_35px_rgba(212,175,55,0.55)] relative group transition-transform duration-500 hover:scale-105">
+                <img
+                  src="https://image.noelshack.com/fichiers/2026/22/7/1780178760-chatgpt-image-31-mai-2026-00-00-01.jpg"
+                  alt="Sâad'ev Convergence Logo"
+                  referrerPolicy="no-referrer"
+                  className="absolute inset-0 w-full h-full object-contain mix-blend-screen opacity-90 group-hover:opacity-100 transition-opacity duration-305"
+                />
+                
+                {/* Delicate overlay to keep center labels clean & legible */}
+                <div className="absolute inset-0 bg-black/45 group-hover:bg-black/35 transition-colors duration-300" />
+                
+                <div className="relative z-10 flex flex-col items-center justify-center">
+                  <LucideIcons.Sparkles className="w-4.5 h-4.5 text-[#d4af37] mb-0.5 animate-pulse" />
+                  <span className="text-[8.5px] sm:text-[9.5px] font-sans font-bold tracking-wider text-white leading-tight">
+                    RELIER
+                  </span>
+                  <span className="text-[6.5px] sm:text-[7.5px] font-mono tracking-widest text-[#d4af37] uppercase mt-0.5 font-bold">
+                    LES SAVOIRS
+                  </span>
+                </div>
+                {/* Micro-sparkle decorative border overlay */}
+                <div className="absolute inset-0.5 rounded-full border border-[#d4af37]/30 pointer-events-none animate-pulse" />
               </div>
 
               {/* 2. CIRCULAR SATELLITE NODES */}
