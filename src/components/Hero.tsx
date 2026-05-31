@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion } from 'motion/react';
 import { ArrowDown, Radio, Sparkles, Globe } from 'lucide-react';
-import NotreMission from './NotreMission';
 
 interface HeroProps {
   onExplore: () => void;
@@ -348,11 +347,6 @@ export default function Hero({ onExplore, onJoin }: HeroProps) {
             <span className="w-32 h-[0.5px] bg-zinc-800" />
           </div>
 
-        </div>
-
-        {/* NOTRE ENGAGEMENT and everything that follows as requested */}
-        <div className="mt-12 w-full">
-          <NotreMission />
         </div>
 
       </div>

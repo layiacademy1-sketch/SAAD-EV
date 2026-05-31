@@ -25,15 +25,15 @@ export default function NotreMission() {
             Notre <span className="text-[#d4af37] not-italic font-bold">mission</span>
           </h2>
           
-          <div className="mt-6 space-y-4 text-base sm:text-lg text-zinc-300 font-light leading-relaxed">
-            <p className="font-serif italic text-xl sm:text-2xl text-white">
-              Est de relier les savoirs. Comprendre l'humain. Transformer les vies.
+          <div className="mt-6 text-base sm:text-lg text-zinc-300 font-light leading-relaxed flex flex-col gap-4">
+            <p className="text-lg sm:text-xl text-white font-serif italic">
+              « de relier les savoirs. Comprendre l'humain. Transformer les vies. »
             </p>
-            <p className="font-medium text-zinc-200">
-              Convergence est une plateforme globale dédiée à la connaissance intégrative.
+            <p>
+              <span className="text-[#d4af37] font-medium">Convergence</span> est une plateforme globale dédiée à la connaissance intégrative.
             </p>
-            <p className="text-sm sm:text-base text-zinc-400">
-              Nous construisons des ponts entre spiritualité, sciences humaines, neurosciences, développement personnel et sagesse universelle pour offrir une compréhension profonde, pratique et accessible à tous.
+            <p>
+              Nous construisons des ponts entre <span className="text-[#d4af37] font-normal">spiritualité</span>, <span className="text-white font-normal">sciences humaines</span>, <span className="text-[#d4af37] font-normal">neurosciences</span>, <span className="text-white font-normal">développement personnel</span> et <span className="text-zinc-200 font-normal">sagesse universelle</span> pour offrir une compréhension profonde, pratique et accessible à tous.
             </p>
           </div>
         </div>

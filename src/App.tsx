@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
+import NotreMission from './components/NotreMission';
 import NosSources from './components/NosSources';
 import UniversContenus from './components/UniversContenus';
 import ApplicationMobile from './components/ApplicationMobile';
@@ -115,7 +116,10 @@ export default function App() {
         onJoin={() => handleNavigation('communaute')}
       />
 
-      {/* 3. Nos Sources grid dashboards */}
+      {/* 3. Notre Mission Column block */}
+      <NotreMission />
+
+      {/* 4. Nos Sources grid dashboards */}
       <NosSources />
 
       {/* 5. Univers De Contenus Interactive Mockups */}
