@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { BookOpen, Headphones, ShieldAlert, Monitor, Sparkles, Star, Quote, Volume2, Play, Pause, Compass, Layers } from 'lucide-react';
 import { CONTENT_UNIVERSE } from '../data';
@@ -12,6 +12,18 @@ interface UniversContenusProps {
 
 export default function UniversContenus({ onPlayPodcast, isPlayingPodcast, currentPlayingTitle }: UniversContenusProps) {
   const [activeItem, setActiveItem] = useState<ContentItem>(CONTENT_UNIVERSE[0]);
+
+  useEffect(() => {
+    const handleSelect = (e: any) => {
+      const type = e.detail?.type;
+      const found = CONTENT_UNIVERSE.find(item => item.type === type);
+      if (found) {
+        setActiveItem(found);
+      }
+    };
+    window.addEventListener('select-content', handleSelect);
+    return () => window.removeEventListener('select-content', handleSelect);
+  }, []);
 
   return (
     <section id="contenus" className="py-24 sm:py-32 bg-[#050507] relative overflow-hidden">

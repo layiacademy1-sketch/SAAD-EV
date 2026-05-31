@@ -340,7 +340,26 @@ export default function Hero({ onExplore, onJoin }: HeroProps) {
             </button>
           </div>
 
-          {/* Subtle decoration lines - Repositioned underneath the button with tight elegance */}
+          {/* Notre Engagement et Mission statement - Brought up right below Découvrir button */}
+          <div className="mt-10 max-w-2xl border-l border-[#d4af37]/40 pl-5 py-0.5 animate-fade-in">
+            <h2 className="text-lg sm:text-2xl font-serif tracking-tight text-white font-semibold italic mb-4">
+              Notre <span className="text-[#d4af37] not-italic font-bold">mission</span>
+            </h2>
+            
+            <div className="text-xs sm:text-sm text-zinc-300 font-light leading-relaxed flex flex-col gap-3.5">
+              <p className="text-sm sm:text-base text-white font-serif italic border-b border-zinc-800/60 pb-2">
+                « de relier les savoirs. Comprendre l'humain. Transformer les vies. »
+              </p>
+              <p>
+                <span className="text-[#d4af37] font-medium">Convergence</span> est une plateforme globale dédiée à la connaissance intégrative.
+              </p>
+              <p>
+                Nous construisons des ponts entre <span className="text-[#d4af37] font-normal">spiritualité</span>, <span className="text-white font-normal">sciences humaines</span>, <span className="text-[#d4af37] font-normal">neurosciences</span>, <span className="text-white font-normal">développement personnel</span> et <span className="text-zinc-200 font-normal">sagesse universelle</span> pour offrir une compréhension profonde, pratique et accessible à tous.
+              </p>
+            </div>
+          </div>
+
+          {/* Subtle decoration lines - Repositioned underneath the block with tight elegance */}
           <div className="flex items-center gap-2.5 mt-8">
             <span className="w-16 h-[1.5px] bg-gradient-to-r from-[#d4af37] to-transparent shadow-[0_0_4px_#d4af37]" />
             <Sparkles className="w-4 h-4 text-[#d4af37] shrink-0" />
