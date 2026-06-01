@@ -330,15 +330,7 @@ export default function Hero({ onExplore, onJoin }: HeroProps) {
             Un espace dédié à ce qui cherche à comprendre, à grandir et à transmettre.
           </p>
 
-          {/* Interactive CTA buttons - Placed immediately beneath the subtext */}
-          <div className="flex flex-col sm:flex-row gap-4 sm:items-center mt-6">
-            <button
-              onClick={onJoin}
-              className="px-5 py-2.5 rounded-full bg-gradient-to-r from-[#d4af37] to-[#bca03f] hover:from-[#eec64e] hover:to-[#c6a843] text-black font-semibold font-mono text-[10px] uppercase tracking-[0.18em] shadow-[0_3px_15px_rgba(212,175,55,0.2)] transition-all duration-300 hover:shadow-[0_4px_20px_rgba(212,175,55,0.3)] hover:-translate-y-0.5 active:translate-y-0"
-            >
-              Découvrir
-            </button>
-          </div>
+
 
           {/* Notre Engagement et Mission statement - Brought up right below Découvrir button */}
           <div className="mt-10 max-w-2xl border-l border-[#d4af37]/40 pl-5 py-0.5 animate-fade-in">
@@ -347,9 +339,6 @@ export default function Hero({ onExplore, onJoin }: HeroProps) {
             </h2>
             
             <div className="text-xs sm:text-sm text-zinc-300 font-light leading-relaxed flex flex-col gap-3.5">
-              <p className="text-sm sm:text-base text-white font-serif italic border-b border-zinc-800/60 pb-2">
-                « de relier les savoirs. Comprendre l'humain. Transformer les vies. »
-              </p>
               <p>
                 <span className="text-[#d4af37] font-medium">Convergence</span> est une plateforme globale dédiée à la connaissance intégrative.
               </p>

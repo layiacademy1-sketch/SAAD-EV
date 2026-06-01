@@ -31,7 +31,8 @@ const SERVICES_DATA = [
     actionText: 'Consulter l’ouvrage physique',
     targetSection: 'contenus',
     contentType: 'livre',
-    badge: 'EDITION LIMITEE'
+    badge: 'EDITION LIMITEE',
+    image: 'https://images.unsplash.com/photo-1543002588-bfa74002ed7e?auto=format&fit=crop&q=80&w=600'
   },
   {
     id: 'ebooks',
@@ -44,7 +45,8 @@ const SERVICES_DATA = [
     actionText: 'Ouvrir l’E-book numérique',
     targetSection: 'contenus',
     contentType: 'ebook',
-    badge: 'LUXURY DIGITAL'
+    badge: 'LUXURY DIGITAL',
+    image: 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=600'
   },
   {
     id: 'livres-audio',
@@ -57,7 +59,8 @@ const SERVICES_DATA = [
     actionText: 'Écouter l’extrait',
     targetSection: 'contenus',
     contentType: 'audio',
-    badge: 'SON SPATIAL BINAURAL'
+    badge: 'SON SPATIAL BINAURAL',
+    image: 'https://images.unsplash.com/photo-1484755560695-a4c7302cce25?auto=format&fit=crop&q=80&w=600'
   },
   {
     id: 'podcasts',
@@ -70,7 +73,8 @@ const SERVICES_DATA = [
     actionText: 'Lancer un Épisode',
     targetSection: 'contenus',
     contentType: 'podcast',
-    badge: 'HAUTE QUALITE FLAC'
+    badge: 'HAUTE QUALITE FLAC',
+    image: 'https://images.unsplash.com/photo-1478737270239-2f02b77fc618?auto=format&fit=crop&q=80&w=600'
   },
   {
     id: 'syntheses',
@@ -83,7 +87,8 @@ const SERVICES_DATA = [
     actionText: 'Visualiser la synthèse',
     targetSection: 'contenus',
     contentType: 'synthese',
-    badge: 'BLUEPRINT EXCLUSIF'
+    badge: 'BLUEPRINT EXCLUSIF',
+    image: 'https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&q=80&w=600'
   },
   {
     id: 'formations',
@@ -95,7 +100,8 @@ const SERVICES_DATA = [
     featured: 'Masterclass « Discernement & Clarté Mentale » (18 modules, 24 heures de contenu)',
     actionText: 'Explorer le programme d\'études',
     targetSection: 'formations',
-    badge: 'ACADEMIE PRESTIGE'
+    badge: 'ACADEMIE PRESTIGE',
+    image: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=600'
   },
   {
     id: 'conferences',
@@ -103,11 +109,12 @@ const SERVICES_DATA = [
     icon: Presentation,
     title: 'Séminaires & Tables Rondes de Prestige',
     tagline: 'La clarté collective vécue sous la lumière du dialogue',
-    description: 'Séminaires privés, rencontres à huis clos et réunions d\'envergure pour élever nos savoirs. Un espace sacré où universitaires, praticiens de la psychologie et esprits de valeur échangent en présentiel.',
+    description: 'Séminaires privés, rencontres à huis clos et réunions d\'envergure pour élever nos savoirs. Un espace sacré où universitaires, praticiens de la psychologie et esprits de value échangent en présentiel.',
     featured: '« Le Sommet de la Conformation » (Paris • Genève • Casablanca, Session d\'Automne, Invitation Privée)',
     actionText: 'Réserver ma place en conférence',
     targetSection: 'communaute',
-    badge: 'SELECT ET PRIVE'
+    badge: 'SELECT ET PRIVE',
+    image: 'https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&q=80&w=600'
   },
   {
     id: 'outils',
@@ -119,7 +126,8 @@ const SERVICES_DATA = [
     featured: '« L’Application Mobile Convergence » (Outils de suivi neuro-cardiaque, respiration active & rituels)',
     actionText: 'Installer l\'Application mobile',
     targetSection: 'mobile',
-    badge: 'BIOMETRIE & ROUTINES'
+    badge: 'BIOMETRIE & ROUTINES',
+    image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=600'
   }
 ];
 
@@ -152,8 +160,8 @@ export default function NotreMission() {
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 relative z-10">
         
-        {/* --- PHOTOREALISTIC SERVICES NAVIGATION BAR (MATCHING THE ATTACHED PHOTO) --- */}
-        <div className="mb-20 max-w-full">
+        {/* --- DESKTOP PHOTOREALISTIC SERVICES NAVIGATION BAR (MATCHING THE ATTACHED PHOTO) --- */}
+        <div className="hidden sm:block mb-20 max-w-full">
           <div className="text-center mb-6">
             <span className="font-mono text-[9px] text-[#d4af37] tracking-[0.3em] uppercase block">EXPLORER NOS OFFRES</span>
             <div className="w-10 h-px bg-[#d4af37]/40 mx-auto mt-2" />
@@ -190,6 +198,91 @@ export default function NotreMission() {
                   {/* Subtle pointer focus bottom light indicator */}
                   <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-[1px] bg-[#d4af37] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </button>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* --- MOBILE DETAILED PHOTO FEED (LIVRES, E-BOOKS, ETC.) --- */}
+        <div className="block sm:hidden mb-16 space-y-6">
+          <div className="text-center mb-6">
+            <span className="font-mono text-[9px] text-[#d4af37] tracking-[0.3em] uppercase block">EXPLORER NOS OFFRES</span>
+            <div className="w-10 h-px bg-[#d4af37]/40 mx-auto mt-2" />
+          </div>
+
+          <div className="flex flex-col gap-6">
+            {SERVICES_DATA.map((service, index) => {
+              const IconComponent = service.icon;
+              return (
+                <div 
+                  key={service.id}
+                  onClick={() => setSelectedService(service)}
+                  className="bg-[#050508]/90 border border-zinc-900 rounded-xl overflow-hidden shadow-[0_12px_32px_rgba(0,0,0,0.6)] flex flex-col active:border-[#d4af37]/30 transition-all duration-300 cursor-pointer"
+                >
+                  {/* Image Header wrapper with rich dark overlay */}
+                  <div className="relative h-44 w-full overflow-hidden bg-zinc-950">
+                    <img 
+                      src={service.image} 
+                      alt={service.title} 
+                      className="w-full h-full object-cover opacity-80"
+                      referrerPolicy="no-referrer"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#050508] via-[#050508]/40 to-transparent" />
+                    
+                    {/* Badge top-left & Icon top-right */}
+                    <div className="absolute top-3.5 left-4 right-4 flex justify-between items-center">
+                      <span className="px-2.5 py-0.5 bg-black/90 border border-[#d4af37]/30 text-[#d4af37] font-mono text-[8px] tracking-widest uppercase rounded">
+                        {service.badge}
+                      </span>
+                      <div className="w-8 h-8 rounded-full bg-black/80 border border-zinc-800 flex items-center justify-center text-[#d4af37]">
+                        <IconComponent className="w-4 h-4 stroke-[1.25]" />
+                      </div>
+                    </div>
+
+                    {/* Bottom-left label overlap */}
+                    <div className="absolute bottom-3 left-4 right-4">
+                      <p className="font-mono text-[9px] text-[#d4af37] tracking-[0.2em] uppercase font-bold">
+                        {service.label}
+                      </p>
+                      <h4 className="text-white text-base font-serif font-semibold mt-0.5 tracking-tight">
+                        {service.title}
+                      </h4>
+                    </div>
+                  </div>
+
+                  {/* Below photo area - "C'est quoi" description */}
+                  <div className="p-4 flex flex-col gap-3.5">
+                    <div className="border-l border-[#d4af37]/45 pl-3 py-0.5">
+                      <p className="text-[10px] text-[#d4af37] font-mono tracking-widest uppercase font-semibold">C'EST QUOI ?</p>
+                      <p className="text-zinc-300 text-xs font-light leading-relaxed mt-1">
+                        {service.description}
+                      </p>
+                    </div>
+
+                    {/* Flagship focus detail card */}
+                    <div className="bg-zinc-900/50 border border-zinc-850/60 p-3 rounded-lg">
+                      <div className="flex items-center gap-1 text-[#d4af37] mb-1">
+                        <Sparkles className="w-3.5 h-3.5 animate-pulse" />
+                        <span className="font-mono text-[8px] uppercase tracking-wider font-semibold">Support vedette :</span>
+                      </div>
+                      <p className="text-zinc-200 text-xs italic font-serif leading-snug">
+                        {service.featured}
+                      </p>
+                    </div>
+
+                    {/* Highly aesthetic action trigger button */}
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleAccessService(service);
+                      }}
+                      className="w-full mt-1.5 py-2.5 rounded-lg bg-gradient-to-r from-zinc-900 to-zinc-955 border border-zinc-800 text-zinc-350 active:border-[#d4af37] active:text-white font-mono text-[9px] uppercase tracking-[0.15em] transition-all duration-300 flex items-center justify-center gap-2"
+                    >
+                      <span className="text-[#d4af37] font-semibold">{service.actionText}</span>
+                      <ArrowRight className="w-3 h-3 text-[#d4af37]" />
+                    </button>
+                  </div>
+                </div>
               );
             })}
           </div>
